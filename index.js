@@ -11,6 +11,7 @@ let time = 10
 playBtn.addEventListener('click' , () => {
     if (gameStart === false){
       startGame()
+      time = 10
     }  
 })
 
@@ -60,7 +61,7 @@ const startGame = () => {
 
 const endGame = () => {
     score = 0
-    time = 10
+    time = 0
     playBtn.innerHTML = 'Play Again'
     gameStart = false
 }
