@@ -1,0 +1,108 @@
+
+body {
+  background-color: black;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+}
+.fsociety{
+  height: 30%;
+  width: 50%;
+}
+.heading {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+.scoreKeep{
+  font-size: 20px;
+  text-align: center;
+}
+.timeLeft{
+  font-size: 20px;
+  text-align: center;
+}
+.holes{
+  width: 300px;
+  height: 300px;
+  border: 1px solid red;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.hole{
+  border: 1px solid white;
+  height: 50px;
+  width: 75px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.play{
+  background-color: black;
+  height: 50px;
+  width: 120px;
+  border: 2px solid rgb(255, 0, 0);
+  color: white;
+  font-size: 20px;
+  margin-top: 15px;
+}
+.hide{
+  display: none;
+}
+
+
+/* Glitch Effect */
+
+
+.glitch {
+  font-size: 50px;
+  font-family: 'Press Start 2P', cursive;
+  color: rgb(231, 21, 21);
+  animation: glitch 5s 5s infinite;
+}
+
+.glitch::before {
+  content: attr(data-text);
+  position: absolute;
+  left: -2px;
+  text-shadow: -5px 0 magenta;
+  background: black;
+  overflow: hidden;
+  top: 0;
+  animation: noise-1 1s linear infinite alternate-reverse, glitch 1s 1s infinite;
+}
+
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 2px;
+  text-shadow: -5px 0 lightgreen;
+  background: black;
+  overflow: hidden;
+  top: 0;
+  animation: noise-2 1s linear infinite alternate-reverse, glitch 1s 1s infinite;
+}
+
+@keyframes glitch {
+  1%{
+    transform: rotateX(10deg) skewX(90deg);
+  }
+  2%{
+    transform: rotateX(0deg) skewX(0deg);
+  }
+}
+
+
+/* Mobile */
+
+/* @media only screen and (max-width: 700px) {
+  body{
+    
+  }
+} */
