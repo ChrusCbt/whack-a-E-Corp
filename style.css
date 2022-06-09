@@ -20,10 +20,19 @@ body {
 .scoreKeep{
   font-size: 20px;
   text-align: center;
+  font-family: 'Press Start 2P', cursive;
+  margin-left: 100px;
+}
+.score{
+  color: rgb(8, 189, 8);
 }
 .timeLeft{
   font-size: 20px;
   text-align: center;
+  font-family: 'Press Start 2P', cursive;
+}
+.timer{
+  color: red;
 }
 .holes{
   width: 300px;
@@ -42,6 +51,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  cursor: pointer;
 }
 .play{
   background-color: black;
@@ -49,8 +59,12 @@ body {
   width: 120px;
   border: 2px solid rgb(255, 0, 0);
   color: white;
-  font-size: 20px;
+  font-size: 15px;
   margin-top: 15px;
+  cursor: pointer;
+}
+.play:hover{
+  background-color: rgb(24, 24, 24);
 }
 .hide{
   display: none;
@@ -101,8 +115,31 @@ body {
 
 /* Mobile */
 
-@media only screen and (max-width: 700px) {
-  body{
-    background-color: gray;
+@media only screen and (max-width: 900px) {
+  .glitch{
+    font-size: 20px;
+  }
+  .fsociety{
+    margin-top: 10px;
+    width: 290px;
+    height: 150px;
+  }
+  .scoreKeep{
+    position: absolute;
+    margin-bottom: 100px;
+    margin-right: 300px;
+    font-size: 10px;
+    display: flex;
+    justify-content: center;
+    justify-content: space-evenly;
+  }
+  .timeLeft{
+    position: absolute;
+    margin-bottom: 100px;
+    margin-left: 240px;
+    font-size: 10px;
+  }
+  .play{
+    margin-bottom: 10px;
   }
 }

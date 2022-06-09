@@ -18,10 +18,17 @@ for(i = 0; i < holesArr.length; i++){
     let currentDiv = holesArr[i]
     currentDiv.addEventListener('click', (e) => {
    if(e.target.style.backgroundImage && gameStart === true){
-    scoreKeep.innerHTML = ++score
-   } 
-   holesArr[random].style.backgroundImage = "url('https://i.pinimg.com/originals/93/7c/c8/937cc812ee89ee66a0290b737d2b0e34.png')"
+    scoreKeep.innerHTML = ++score 
 
+    let border = setInterval(() => {
+        board.style.borderColor = 'green'
+    }, 100);
+
+    setTimeout(() => {
+        board.style.borderColor = 'red'
+        clearInterval(border)
+    }, 300);
+   } 
     })
 }
 
@@ -40,8 +47,8 @@ const startGame = () => {
         holesArr[random].style.backgroundImage = "url('https://picfiles.alphacoders.com/261/thumb-261904.png')"; //image pops up in a random box (div) 
         setTimeout(() => {
             holesArr[random].style.backgroundImage = ''
-        }, 800);
-    },700);
+        }, 600);
+    },600);
 
     // game over
     setTimeout(() => {
