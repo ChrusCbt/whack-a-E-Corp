@@ -118,6 +118,7 @@ body {
 @media only screen and (max-width: 900px) {
   .glitch{
     font-size: 20px;
+    margin-top: 80px;
   }
   .fsociety{
     margin-top: 10px;
@@ -126,18 +127,18 @@ body {
   }
   .scoreKeep{
     position: absolute;
-    margin-bottom: 100px;
-    margin-right: 300px;
-    font-size: 10px;
+    margin-bottom: 70px;
+    margin-right: 280px;
+    font-size: 14px;
     display: flex;
     justify-content: center;
     justify-content: space-evenly;
   }
   .timeLeft{
     position: absolute;
-    margin-bottom: 100px;
-    margin-left: 240px;
-    font-size: 10px;
+    margin-bottom: 70px;
+    margin-left: 200px;
+    font-size: 14px;
   }
   .play{
     margin-bottom: 10px;
