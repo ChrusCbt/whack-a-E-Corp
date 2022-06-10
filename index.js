@@ -5,6 +5,7 @@ const holesArr = document.querySelectorAll('.hole') // selects everything with t
 const scoreKeep = document.querySelector('.score')
 const timeLeft = document.querySelector('.timer')
 const level = document.querySelector('.level')
+const mediaQuery = window.matchMedia('(max-width: 900px)')
 let score = 0
 let time = 10
 
@@ -40,7 +41,6 @@ const startGame = () => {
     // level.classList.remove('hide')
     scoreKeep.innerHTML = 0
 
-
     let timeInterval = setInterval(() => {
         timeLeft.innerHTML = --time
     }, 1000);
@@ -52,6 +52,20 @@ const startGame = () => {
             holesArr[random].style.backgroundImage = ''
         }, 600);
     },600);
+
+    if (mediaQuery.matches) {
+        let mobile = setInterval(() => {
+            const random = Math.floor(Math.random() * 9) 
+            holesArr[random].style.backgroundImage = "url('https://picfiles.alphacoders.com/261/thumb-261904.png')";
+            setTimeout(() => {
+                holesArr[random].style.backgroundImage = ''
+            }, 400);
+        },400);
+
+        setTimeout(() => {
+            clearInterval(mobile)
+        }, 10000);
+    }
 
     // game over
     setTimeout(() => {
@@ -69,14 +83,5 @@ const endGame = () => {
     gameStart = false
 }
 
-const mediaQuery = window.matchMedia('(max-width: 900px)')
 
-if (mediaQuery.matches) {
-    let interval = setInterval(() => {
-        const random = Math.floor(Math.random() * 9) // create a random number between 0 and 8 
-        holesArr[random].style.backgroundImage = "url('https://picfiles.alphacoders.com/261/thumb-261904.png')"; //image pops up in a random box (div) 
-        setTimeout(() => {
-            holesArr[random].style.backgroundImage = ''
-        }, 400);
-    },400);
-}
+
