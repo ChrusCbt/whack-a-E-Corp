@@ -1,10 +1,11 @@
 let gameStart = false
 const playBtn = document.querySelector('.play')
 const board = document.querySelector('.holes')
-let holesArr = document.querySelectorAll('.hole') // selects everything with the class 'hole'
+const holesArr = document.querySelectorAll('.hole') // selects everything with the class 'hole'
 const scoreKeep = document.querySelector('.score')
-let score = 0
 const timeLeft = document.querySelector('.timer')
+const level = document.querySelector('.level')
+let score = 0
 let time = 10
 
 
@@ -36,6 +37,7 @@ for(i = 0; i < holesArr.length; i++){
 const startGame = () => {
     gameStart = true
     board.classList.remove('hide')
+    // level.classList.remove('hide')
     scoreKeep.innerHTML = 0
 
 
@@ -67,3 +69,14 @@ const endGame = () => {
     gameStart = false
 }
 
+const mediaQuery = window.matchMedia('(max-width: 900px)')
+
+if (mediaQuery.matches) {
+    let interval = setInterval(() => {
+        const random = Math.floor(Math.random() * 9) // create a random number between 0 and 8 
+        holesArr[random].style.backgroundImage = "url('https://picfiles.alphacoders.com/261/thumb-261904.png')"; //image pops up in a random box (div) 
+        setTimeout(() => {
+            holesArr[random].style.backgroundImage = ''
+        }, 400);
+    },400);
+}
