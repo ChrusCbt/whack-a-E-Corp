@@ -11,6 +11,16 @@ let time = 10
 
 
 playBtn.addEventListener('click' , () => {
+
+    let press = setInterval(() => {
+        playBtn.classList.add('press')
+    }, 100);
+
+    setTimeout(() => {
+        playBtn.classList.remove('press')
+        clearInterval(press)
+    }, 200);
+
     if (gameStart === false){
       startGame()
       timeLeft.innerHTML = '10'
@@ -22,6 +32,15 @@ for(i = 0; i < holesArr.length; i++){
     currentDiv.addEventListener('click', (e) => {
    if(e.target.style.backgroundImage && gameStart === true){
     scoreKeep.innerHTML = ++score 
+
+   let bounce = setInterval(() => {
+    currentDiv.classList.add('borderBounce')
+   }, 100);
+
+   setTimeout(() => {
+    currentDiv.classList.remove('borderBounce')
+       clearInterval(bounce)
+   }, 300);
 
     let border = setInterval(() => {
         board.style.borderColor = 'green'
@@ -50,8 +69,8 @@ const startGame = () => {
         holesArr[random].style.backgroundImage = "url('https://picfiles.alphacoders.com/261/thumb-261904.png')"; //image pops up in a random box (div) 
         setTimeout(() => {
             holesArr[random].style.backgroundImage = ''
-        }, 600);
-    },600);
+        }, 500);
+    },500);
 
     if (mediaQuery.matches) {
         let mobile = setInterval(() => {
@@ -59,8 +78,8 @@ const startGame = () => {
             holesArr[random].style.backgroundImage = "url('https://picfiles.alphacoders.com/261/thumb-261904.png')";
             setTimeout(() => {
                 holesArr[random].style.backgroundImage = ''
-            }, 400);
-        },400);
+            }, 500);
+        },500);
 
         setTimeout(() => {
             clearInterval(mobile)
