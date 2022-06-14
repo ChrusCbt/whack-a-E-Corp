@@ -78,7 +78,7 @@ const startGame = () => {
             holesArr[random].style.backgroundImage = "url('https://picfiles.alphacoders.com/261/thumb-261904.png')";
             setTimeout(() => {
                 holesArr[random].style.backgroundImage = ''
-            }, 500);
+            }, 700);
         },500);
 
         setTimeout(() => {
