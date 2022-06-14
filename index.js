@@ -69,8 +69,8 @@ const startGame = () => {
         holesArr[random].style.backgroundImage = "url('https://picfiles.alphacoders.com/261/thumb-261904.png')"; //image pops up in a random box (div) 
         setTimeout(() => {
             holesArr[random].style.backgroundImage = ''
-        }, 500);
-    },500);
+        }, 400);
+    },400);
 
     if (mediaQuery.matches) {
         let mobile = setInterval(() => {
@@ -78,8 +78,8 @@ const startGame = () => {
             holesArr[random].style.backgroundImage = "url('https://picfiles.alphacoders.com/261/thumb-261904.png')";
             setTimeout(() => {
                 holesArr[random].style.backgroundImage = ''
-            }, 500);
-        },500);
+            }, 400);
+        },400);
 
         setTimeout(() => {
             clearInterval(mobile)
